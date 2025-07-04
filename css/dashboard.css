@@ -135,3 +135,104 @@ h1 span{
   margin-left: 200px;
   margin-top: 50px;
 }
+.transition {
+  width: 100%;
+  min-height: 100vh; /* ou o tamanho que quiser */
+  background:
+    linear-gradient(to bottom, #F7F6F2 0px, #007BFF 200px, #1383fa 300px, transparent 300px),
+    #1383fa;
+  background-repeat: no-repeat;
+  background-size: 100% 300px, 100% 100%;
+}
+.transition-h1 {
+  color: white;
+  padding-top: 20px; /* Ajuste conforme necessário */
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif;
+ margin-left: 180px;
+ text-align: left;
+}
+.transition-h1 span {
+  color: 	#FFD700; /* Azul Turquesa */
+  font-weight: bold;
+  margin-left: 50px;
+}
+.scroll-suave {
+  width: 320px;
+  
+  background-color: #e0f7fa; /* azul claro */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+}
+
+.scroll-suave-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.scroll-suave-items img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Esconde os controles */
+.controles {
+  display: none;
+}
+
+.descricao {
+  padding: 16px;
+  background-color: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.descricao h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #01579b;
+}
+
+.descricao p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+.vj-mais{
+text-decoration:wavy;
+color:#01579b
+}
+.cards-wrapper {
+  width: calc(100% - 40px); /* tira 40px do total da largura */
+  max-width: 1000px;
+  min-width: 640px;
+  margin: 0 20px; /* margem esquerda e direita */
+  column-gap: 1px;
+  row-gap: 23px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Centraliza o último card se ele ficar sozinho na última linha */
+.cards-wrapper > .scroll-suave:last-child:nth-child(odd) {
+  grid-column: 1 / -1;  /* ocupa as 2 colunas */
+  justify-self: center;
+}
+
+/* Opcional: responsivo para celular */
+@media (max-width: 600px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+}
